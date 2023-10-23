@@ -1,0 +1,243 @@
+@import "../index.scss";
+
+//
+$slide-down-duration: 0.6s;
+$slide-down-delay: 0.15s;
+//
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+// Common Effects ..
+@mixin gradient($layer, $color1, $color2) {
+  position: absolute;
+  top: calc($layer * $height);
+  left: 0;
+  right: 0;
+  height: 1.2rem;
+  background: linear-gradient(90deg, $color1, $color2);
+}
+@mixin slide-down($layer, $duration, $delay) {
+  animation: slide-down-animation $duration ease-in calc($layer * $delay) both;
+}
+@mixin slide-up($duration, $delay) {
+  animation: slide-up-animation $duration ease-in $delay both;
+}
+@mixin slide-left($duration, $delay) {
+  animation: slide-left-animation $duration ease-in $delay both;
+}
+@mixin slide-right($duration, $delay) {
+  animation: slide-right-animation $duration ease-in $delay both;
+}
+
+// 6 layers of greadients
+.gradient-1 {
+  @include gradient(0, $color-1, $color-2);
+}
+.gradient-2 {
+  @include gradient(1, $color-3, $color-4);
+}
+.gradient-3 {
+  @include gradient(2, $color-5, $color-6);
+}
+.gradient-4 {
+  @include gradient(3, $color-7, $color-8);
+}
+.gradient-5 {
+  @include gradient(4, $color-9, $color-10);
+}
+.gradient-6 {
+  @include gradient(5, $color-11, $color-12);
+}
+// Sliding DOWN
+.down-1 {
+  @include slide-down(0, $slide-down-duration, $slide-down-delay);
+}
+.down-2 {
+  @include slide-down(1, $slide-down-duration, $slide-down-delay);
+}
+.down-3 {
+  @include slide-down(2, $slide-down-duration, $slide-down-delay);
+}
+.down-4 {
+  @include slide-down(3, $slide-down-duration, $slide-down-delay);
+}
+.down-5 {
+  @include slide-down(4, $slide-down-duration, $slide-down-delay);
+}
+.down-6 {
+  @include slide-down(5, $slide-down-duration, $slide-down-delay);
+}
+// Sliding UP
+.up-4 {
+  @include slide-up(0.6s, 0.3s);
+}
+.up-5 {
+  @include slide-up(0.6s, 0.15s);
+}
+.up-6 {
+  @include slide-up(0.6s, 0s);
+}
+// Sliding LEFT
+.left {
+  @include slide-left(0.6s, 0.9s);
+}
+.right {
+  @include slide-right(0.6s, 0s);
+}
+//
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: $font-lcd;
+  line-height: $height;
+  text-align: center;
+  color: black;
+}
+.logo {
+  text-align: left;
+  margin-left: 3rem;
+  width: fit-content;
+  z-index: 3;
+  animation: show-animation 1s ease-in both;
+}
+.logo-big {
+  text-align: left;
+  margin-left: 3rem;
+  width: fit-content;
+  z-index: 3;
+  animation: logo-bigger 1s ease-in both;
+  .design {
+    animation: logo-smaller 1s ease-in both;
+  }
+}
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 3rem;
+  animation: show-animation 1s ease-in both;
+}
+.hide-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 3rem;
+  animation: hide-animation 1s ease-in both;
+}
+.link {
+  width: fit-content;
+  position: relative;
+  padding: 0 0.5rem;
+  z-index: 3;
+}
+.link:hover::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  background-color: #fff;
+  height: 0.2rem;
+  width: 100%;
+  top: 50%;
+  z-index: -11;
+  margin-left: -0.5rem;
+  animation: blink 0.5s ease-in both;
+}
+
+// ANIMATIONS
+@keyframes slide-down-animation {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: $height;
+  }
+}
+@keyframes slide-up-animation {
+  0% {
+    height: $height;
+  }
+  100% {
+    height: 0;
+  }
+}
+@keyframes slide-left-animation {
+  0% {
+    width: 100%;
+  }
+  80% {
+    width: 6rem;
+  }
+  100% {
+    width: 4rem;
+  }
+}
+@keyframes slide-right-animation {
+  0% {
+    width: 4rem;
+  }
+  80% {
+    width: 10rem;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes show-animation {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hide-animation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes logo-bigger {
+  0% {
+    font-size: 1.2rem;
+    margin-left: 3rem;
+  }
+  20% {
+    margin-left: 0.3rem;
+  }
+  100% {
+    font-size: 1.8rem;
+    margin-left: 0.3rem;
+  }
+}
+@keyframes logo-smaller {
+  0% {
+    font-size: 1.2rem;
+  }
+
+  100% {
+    font-size: 0rem;
+  }
+}

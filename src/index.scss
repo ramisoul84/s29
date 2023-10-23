@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+@font-face {
+  font-family: "lcd_solidregular";
+  src: url("assets/fonts/lcdsolid/lcdsolid-vpzb-webfont.woff2") format("woff2"),
+    url("assets/fonts/lcdsolid/lcdsolid-vpzb-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Variables ..
+$color-1: #73c046;
+$color-2: #cb866d;
+$color-3: #60a53a;
+$color-4: #af715d;
+$color-5: #3c6b26;
+$color-6: #73473c;
+$color-7: #2a4e19;
+$color-8: #54332d;
+$color-9: #1a320f;
+$color-10: #351f1b;
+$color-11: #10220b;
+$color-12: #261412;
+$color-bg: #000000;
+$color-txt: #ffffff;
+
+$font-lcd: "lcd_solidregular";
+$font-Montserrat: "Montserrat";
+
+$height: 1.2rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-txt;
+  height: 400vh;
+  transition: all ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+section:nth-child(odd) {
+  background-color: #73c046;
+}
