@@ -47,12 +47,48 @@ a {
 }
 
 section {
+  min-height: 100vh;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  margin: 0 auto;
 }
 section:nth-child(odd) {
-  background-color: #73c046;
+  background-color: #161816;
+}
+
+@mixin gradient-border($w, $color1, $color2) {
+  position: relative;
+  padding: 1rem;
+  line-height: 1.8rem;
+  background-color: $color-bg;
+  $width: $w;
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * $width);
+    left: calc(-1 * $width);
+    height: calc(100% + $width * 2);
+    width: calc(100% + $width * 2);
+    background: linear-gradient(90deg, $color1, $color2);
+    z-index: -1;
+    animation: animatedgradient 1s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+}
+@mixin gradient-border-after($width, $color1, $color2) {
+  position: absolute;
+}
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -6,7 +6,7 @@ const Header = (props) => {
   useEffect(() => {
     function onScroll() {
       scrollRef.current = window.scrollY;
-      if (window.scrollY >= 200) setFrirstLoad(false);
+      if (window.scrollY >= 180) setFrirstLoad(false);
     }
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -15,18 +15,18 @@ const Header = (props) => {
     <header ref={scrollRef}>
       <div
         className={`gradient-1 ${
-          scrollRef.current < 200 && firstLoad
+          scrollRef.current < 180 && firstLoad
             ? "down-1"
-            : scrollRef.current < 200
+            : scrollRef.current < 180
             ? "right"
-            : "left"
+            : "left-1"
         }`}
       ></div>
       <div
         className={`gradient-2 ${
-          scrollRef.current < 200 && firstLoad
+          scrollRef.current < 180 && firstLoad
             ? "down-2 show-nav"
-            : scrollRef.current < 200
+            : scrollRef.current < 180
             ? "right"
             : "left"
         }`}
@@ -34,7 +34,7 @@ const Header = (props) => {
         <div className="grid-2">
           <a
             href="#home"
-            className={` ${scrollRef.current < 200 ? "logo" : "logo-big"}`}
+            className={` ${scrollRef.current < 180 ? "logo" : "logo-big"}`}
           >
             <p>
               s29<span className="design">.design</span>
@@ -42,7 +42,7 @@ const Header = (props) => {
           </a>
           <div
             className={` ${
-              scrollRef.current < 200 ? "nav-links" : "hide-links"
+              scrollRef.current < 180 ? "nav-links" : "hide-links"
             }`}
           >
             <a href="#work" className="link">
@@ -59,21 +59,21 @@ const Header = (props) => {
       </div>
       <div
         className={`gradient-3 ${
-          scrollRef.current < 200 && firstLoad
+          scrollRef.current < 180 && firstLoad
             ? "down-3"
-            : scrollRef.current < 200
+            : scrollRef.current < 180
             ? "right"
             : "left"
         }`}
       ></div>
       <div
-        className={`gradient-4 ${scrollRef.current < 200 ? "down-4" : "up-4"}`}
+        className={`gradient-4 ${scrollRef.current < 180 ? "down-4" : "up-4"}`}
       ></div>
       <div
-        className={`gradient-5 ${scrollRef.current < 200 ? "down-5" : "up-5"}`}
+        className={`gradient-5 ${scrollRef.current < 180 ? "down-5" : "up-5"}`}
       ></div>
       <div
-        className={`gradient-6 ${scrollRef.current < 200 ? "down-6" : "up-6"}`}
+        className={`gradient-6 ${scrollRef.current < 180 ? "down-6" : "up-6"}`}
       ></div>
     </header>
   );

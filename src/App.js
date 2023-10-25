@@ -19,7 +19,7 @@ const App = () => {
   const content = (
     <div>
       <Header scrollPos={currentScrollpos} />
-      <Home />
+      <Home scrollPos={currentScrollpos} />
       <Work />
       <About />
       <Contact />
