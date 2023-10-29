@@ -1,3 +1,4 @@
+// Importing fonts
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
 @font-face {
   font-family: "lcd_solidregular";
@@ -7,26 +8,43 @@
   font-style: normal;
 }
 
-// Variables ..
-$color-1: #73c046;
-$color-2: #cb866d;
-$color-3: #60a53a;
-$color-4: #af715d;
-$color-5: #3c6b26;
-$color-6: #73473c;
-$color-7: #2a4e19;
-$color-8: #54332d;
-$color-9: #1a320f;
-$color-10: #351f1b;
-$color-11: #10220b;
-$color-12: #261412;
-$color-bg: #000000;
-$color-txt: #ffffff;
+:root {
+  --color-1: #73c046;
+  --color-2: #cb866d;
+  --color-3: #60a53a;
+  --color-4: #af715d;
+  --color-5: #3c6b26;
+  --color-6: #73473c;
+  --color-7: #2a4e19;
+  --color-8: #54332d;
+  --color-9: #1a320f;
+  --color-10: #351f1b;
+  --color-11: #10220b;
+  --color-12: #261412;
+  --color-bg: #000000;
+  --color-txt: #ffffff;
+  --height: 1.2rem;
+  --font-size: 1.2rem;
+}
 
+$color-1: var(--color-1);
+$color-2: var(--color-2);
+$color-3: var(--color-3);
+$color-4: var(--color-4);
+$color-5: var(--color-5);
+$color-6: var(--color-6);
+$color-7: var(--color-7);
+$color-8: var(--color-8);
+$color-9: var(--color-9);
+$color-10: var(--color-10);
+$color-11: var(--color-11);
+$color-12: var(--color-12);
+$color-bg: var(--color-bg);
+$height: var(--height);
+$font-size: var(--font-size);
+$color-txt: #ffffff;
 $font-lcd: "lcd_solidregular";
 $font-Montserrat: "Montserrat";
-
-$height: 1.2rem;
 
 * {
   margin: 0;
@@ -38,7 +56,6 @@ body {
   background-color: $color-bg;
   color: $color-txt;
   height: 400vh;
-  transition: all ease;
 }
 
 a {
@@ -54,41 +71,4 @@ section {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-}
-section:nth-child(odd) {
-  background-color: #161816;
-}
-
-@mixin gradient-border($w, $color1, $color2) {
-  position: relative;
-  padding: 1rem;
-  line-height: 1.8rem;
-  background-color: $color-bg;
-  $width: $w;
-  &::after {
-    content: "";
-    position: absolute;
-    top: calc(-1 * $width);
-    left: calc(-1 * $width);
-    height: calc(100% + $width * 2);
-    width: calc(100% + $width * 2);
-    background: linear-gradient(90deg, $color1, $color2);
-    z-index: -1;
-    animation: animatedgradient 1s ease alternate infinite;
-    background-size: 300% 300%;
-  }
-}
-@mixin gradient-border-after($width, $color1, $color2) {
-  position: absolute;
-}
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }

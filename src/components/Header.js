@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
 import "./header.scss";
 const Header = (props) => {
   const scrollRef = useRef(0);
@@ -25,10 +26,10 @@ const Header = (props) => {
       <div
         className={`gradient-2 ${
           scrollRef.current < 180 && firstLoad
-            ? "down-2 show-nav"
+            ? "down-2"
             : scrollRef.current < 180
             ? "right"
-            : "left"
+            : "left-2-3 hide-link"
         }`}
       >
         <div className="grid-2">
@@ -40,20 +41,26 @@ const Header = (props) => {
               s29<span className="design">.design</span>
             </p>
           </a>
-          <div
-            className={` ${
-              scrollRef.current < 180 ? "nav-links" : "hide-links"
-            }`}
-          >
-            <a href="#work" className="link">
-              work
-            </a>
-            <a href="#about" className="link">
-              about
-            </a>
-            <a href="#contact" className="link">
-              contact
-            </a>
+          <div>
+            {scrollRef.current < 180 ? (
+              <div
+                className={` ${
+                  scrollRef.current < 180 ? "nav-links" : "hide-links"
+                }`}
+              >
+                <a href="#work" className="link">
+                  work
+                </a>
+                <a href="#about" className="link">
+                  about
+                </a>
+                <a href="#contact" className="link">
+                  contact
+                </a>
+              </div>
+            ) : (
+              <RxHamburgerMenu className="menu" />
+            )}
           </div>
         </div>
       </div>
@@ -63,7 +70,7 @@ const Header = (props) => {
             ? "down-3"
             : scrollRef.current < 180
             ? "right"
-            : "left"
+            : "left-2-3"
         }`}
       ></div>
       <div

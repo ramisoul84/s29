@@ -1,0 +1,17 @@
+@import "../index.scss";
+aside {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  color: $color-3;
+  font-family: $font-Montserrat;
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  width: 2rem;
+  font-family: inherit;
+  background-color: transparent;
+  color: $color-txt;
+  font-size: 2rem;
+}

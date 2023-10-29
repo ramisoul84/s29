@@ -1,4 +1,4 @@
-const About = () => {
-  return <section id="about">ABOUT</section>;
+const About = (props) => {
+  return <section id="about"></section>;
 };
 export default About;
