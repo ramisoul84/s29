@@ -1,0 +1,9 @@
+@import "../index.scss";
+.about {
+  @include card(0.3rem);
+}
+.team {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

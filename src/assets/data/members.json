@@ -1,0 +1,41 @@
+[
+  {
+    "img": "sascha",
+    "skills": [
+      "game design",
+      "environment design",
+      "interactive design",
+      "VR",
+      "VFX"
+    ],
+    "name": "SASCHA",
+    "text": "Sascha is an award-winning game creator, environment artist and experience designer; he is certified Unreal Engine teacher; and he has worked om numerous games(ex1 - ex2) and VXS projects (ex3 - ex4) during his 25 years of experience in the field.",
+    "color": "#75b56a"
+  },
+  {
+    "img": "zygi",
+    "skills": ["web development", "data bases", "data security", "programming"],
+    "name": "ZYGI",
+    "text": "Zygi is a programmer, web designer and a web developer with a solid 7 years experience in designing easy to navigate and secure websites and data basis",
+    "color": "#afc24a"
+  },
+  {
+    "img": "emil",
+    "skills": [
+      "architecture",
+      "brand design",
+      "graphic design",
+      "motion design"
+    ],
+    "name": "EMIL",
+    "text": "Emil is an architect and a designer with 10 years of experience that ranges from designing a range of projects and competitions for big names ( like Werner Sobek and Leonard design archetics ) to designing brands and graphic elements for small and medium-sized buisnesses.",
+    "color": "#de6e6e"
+  },
+  {
+    "img": "you",
+    "skills": ["talanted", "wise", "ambition"],
+    "name": "YOU",
+    "text": "We are always on the look for talanted freelancers to collaborate with, ping us and show us what you can, and we will be back in touch with you, when there is a chance to collaborate.",
+    "color": "#fff"
+  }
+]

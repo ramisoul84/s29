@@ -19,8 +19,8 @@ const App = () => {
   }, []);
   const content = (
     <div>
-      <Header scrollPos={currentScrollpos} />
-      <Home scrollPos={currentScrollpos} />
+      <Header />
+      <Home />
       <Work scrollPos={currentScrollpos} />
       <About scrollPos={currentScrollpos} />
       <Contact scrollPos={currentScrollpos} />

@@ -72,3 +72,48 @@ section {
   align-items: center;
   margin: 0 auto;
 }
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@mixin card($borderWidth) {
+  background: $color-bg;
+  width: 100%;
+  height: fit-content;
+  padding: 0.8rem;
+  font-family: $font-Montserrat;
+  line-height: calc(1.2 * $height);
+  position: relative;
+  h5 {
+    font-family: $font-lcd;
+    font-size: calc(1.2 * $font-size);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  span {
+    font-family: $font-lcd;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * $borderWidth);
+    left: calc(-1 * $borderWidth);
+    height: calc(100% + $borderWidth * 2);
+    width: calc(100% + $borderWidth * 2);
+    background-image: linear-gradient(var(--rotate), $color-1, $color-2);
+    z-index: -1;
+    animation: spin 5s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}

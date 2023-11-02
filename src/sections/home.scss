@@ -1,12 +1,7 @@
 @import "../index.scss";
 
-#home {
-  position: relative;
-}
 // HOME-HELLO
 .home-hello {
-  position: absolute;
-  top: calc(50% - 0.6 * $height);
   font-family: $font-lcd;
   line-height: calc(1.2 * $height);
   font-size: $font-size;
@@ -32,7 +27,6 @@
   background: linear-gradient(180deg, $color-1, $color-2);
   animation: blink-1 1.6s infinite both;
 }
-// HOME-SERVICES
 
 // HOME-HELLO ANIMATION
 @keyframes scale-in-ver-center {
@@ -93,5 +87,3 @@
     opacity: 0;
   }
 }
-
-// HOME-SERVICES ANIMATION

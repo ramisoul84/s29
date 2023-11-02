@@ -1,5 +1,5 @@
 import "./home.scss";
-const Home = (props) => {
+const Home = () => {
   return (
     <section id="home">
       <p className="home-hello">

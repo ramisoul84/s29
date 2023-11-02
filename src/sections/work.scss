@@ -1,0 +1,43 @@
+@import "../index.scss";
+
+.container {
+  width: 100%;
+  aspect-ratio: 4;
+  background-color: $color-bg;
+  border-radius: 0.4rem;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.container span {
+  color: $color-txt;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 500%;
+  top: -200%;
+  left: 45%;
+  background: linear-gradient(#00e5ff, #b400fb);
+  animation: neon 15s linear infinite;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background-color: $color-bg;
+}
+
+@keyframes neon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

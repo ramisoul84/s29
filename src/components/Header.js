@@ -1,17 +1,25 @@
 import { useRef, useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./header.scss";
-const Header = (props) => {
+const Header = () => {
   const scrollRef = useRef(0);
   const [firstLoad, setFrirstLoad] = useState(true);
   useEffect(() => {
     function onScroll() {
+      const list = document.querySelector(".menu-list");
       scrollRef.current = window.scrollY;
       if (window.scrollY >= 180) setFrirstLoad(false);
+      if (window.scrollY <= 180) list.classList.remove("menu-list-down");
     }
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  const toggleMenu = () => {
+    const list = document.querySelector(".menu-list");
+    list.classList.contains("menu-list-down")
+      ? list.classList.remove("menu-list-down")
+      : list.classList.add("menu-list-down");
+  };
   return (
     <header ref={scrollRef}>
       <div
@@ -59,10 +67,23 @@ const Header = (props) => {
                 </a>
               </div>
             ) : (
-              <RxHamburgerMenu className="menu" />
+              <RxHamburgerMenu className="menu" onClick={toggleMenu} />
             )}
           </div>
         </div>
+      </div>
+      <div className="menu-list">
+        <ul>
+          <li className="color1">
+            <a href="#work">Work</a>
+          </li>
+          <li className="color1">
+            <a href="#about">About</a>
+          </li>
+          <li className="color1">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
       </div>
       <div
         className={`gradient-3 ${
