@@ -1,0 +1,86 @@
+@import "../index.scss";
+#contact {
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.contact-title {
+  @include title;
+  align-items: start;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  label {
+    font-family: $font-lcd;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  input {
+    background-color: transparent;
+    color: $color-txt;
+    font-family: $font-Montserrat;
+    border: 2px solid $color-1;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    &:focus {
+      border: 2px solid $color-2;
+      box-shadow: 3px 3px 3px $color-4;
+    }
+  }
+  .submit {
+    background-color: $color-1;
+    color: $color-txt;
+    font-family: $font-lcd;
+    border: 0;
+    border-radius: 0.4rem;
+    margin: 1rem 0;
+    padding: 0 2rem;
+    width: 12rem;
+    line-height: 3rem;
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: flex-end;
+    .arrow {
+      line-height: 3rem;
+      font-size: 3rem;
+      align-self: center;
+      padding-left: 0.5rem;
+    }
+  }
+  .submit:hover {
+    cursor: pointer;
+    .arrow {
+      color: $color-4;
+      animation: arrowForward 0.6s ease-in 0s infinite;
+    }
+  }
+  @keyframes arrowForward {
+    0% {
+      margin-left: 0rem;
+    }
+    100% {
+      margin-left: 1rem;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    color: $color-txt;
+    font-family: $font-Montserrat;
+    background-color: transparent;
+    border: 2px solid $color-1;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    min-height: 6rem;
+    outline: none;
+    &:focus {
+      border: 2px solid $color-2;
+      box-shadow: 3px 3px 3px $color-4;
+    }
+  }
+}

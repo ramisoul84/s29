@@ -181,18 +181,18 @@ header {
 }
 .menu-list-down {
   top: calc(3 * $height);
-}
-ul {
-  display: flex;
-  flex-direction: column;
-}
-li {
-  list-style: none;
-  padding-left: 0.4rem;
-}
-li:hover {
-  cursor: pointer;
-  background-color: $color-2;
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      list-style: none;
+      padding-left: 0.4rem;
+      &:hover {
+        cursor: pointer;
+        background-color: $color-2;
+      }
+    }
+  }
 }
 
 // ANIMATIONS

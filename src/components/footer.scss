@@ -1,0 +1,52 @@
+@import "../index.scss";
+footer {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  font-family: $font-lcd;
+  margin: 2rem 0;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+}
+.col1 {
+  color: #75b56a;
+}
+.col2 {
+  color: #afc24a;
+}
+.social-link {
+  color: #de6e6e;
+  width: fit-content;
+  position: relative;
+}
+.social-link:hover::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  background-color: #fff;
+  opacity: 80%;
+  height: 0.2rem;
+  width: 100%;
+  top: 60%;
+  z-index: -1;
+}
+.social-link:link {
+  color: #de6e6e;
+}
+.footer-logo {
+  position: relative;
+}
+.footer-logo img {
+  width: 4rem;
+  position: absolute;
+  left: 2rem;
+  bottom: 0rem;
+}

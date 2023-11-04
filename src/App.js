@@ -5,6 +5,7 @@ import Work from "./sections/Work";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import SideNav from "./components/SideNav";
+import Footer from "./components/Footer";
 const App = () => {
   const [currentScrollpos, setCurrentScrollpos] = useState(0);
   useEffect(() => {
@@ -24,6 +25,7 @@ const App = () => {
       <Work scrollPos={currentScrollpos} />
       <About scrollPos={currentScrollpos} />
       <Contact scrollPos={currentScrollpos} />
+      <Footer />
       <SideNav />
     </div>
   );

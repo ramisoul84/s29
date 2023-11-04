@@ -1,11 +1,5 @@
 import "./work.scss";
 const Work = (props) => {
-  return (
-    <section id="work">
-      <div className="container">
-        <span>Hello</span>
-      </div>
-    </section>
-  );
+  return <section id="work">WORK</section>;
 };
 export default Work;

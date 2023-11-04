@@ -53,9 +53,9 @@ $font-Montserrat: "Montserrat";
 }
 
 body {
+  background-image: url("./assets/img/background.png");
   background-color: $color-bg;
   color: $color-txt;
-  height: 400vh;
 }
 
 a {
@@ -64,15 +64,13 @@ a {
 }
 
 section {
-  min-height: 100vh;
-  max-width: 80%;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
 }
 
+// Common Effects
 @property --rotate {
   syntax: "<angle>";
   initial-value: 90deg;
@@ -80,7 +78,8 @@ section {
 }
 
 @mixin card($borderWidth) {
-  background: $color-bg;
+  background-color: $color-bg;
+  background-image: url("./assets/img/background.png");
   width: 100%;
   height: fit-content;
   padding: 0.8rem;
@@ -89,9 +88,27 @@ section {
   position: relative;
   h5 {
     font-family: $font-lcd;
-    font-size: calc(1.2 * $font-size);
+    font-size: calc(1.4 * $font-size);
+    line-height: calc(1.4 * $height);
+    text-align: center;
     font-weight: 500;
     margin-bottom: 0.5rem;
+    color: $color-txt;
+    width: fit-content;
+    position: relative;
+    padding: 0 1rem;
+    z-index: 2;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: calc(0.4 * $height);
+      transform: translateY(calc(0.5 * $font-size));
+      background-color: $color-5;
+      opacity: 0.6;
+      margin-left: -1rem;
+      z-index: -1;
+    }
   }
   span {
     font-family: $font-lcd;
@@ -115,5 +132,47 @@ section {
   }
   100% {
     --rotate: 360deg;
+  }
+}
+
+@mixin title {
+  font-family: $font-lcd;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.5rem 2rem;
+  position: relative;
+  width: fit-content;
+  z-index: 5;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 800%;
+    top: -350%;
+    left: 45%;
+    background: linear-gradient($color-1, $color-2);
+    animation: neon 3s linear infinite;
+    z-index: -2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0.2rem;
+    background-color: $color-bg;
+    background-image: url("./assets/img/background.png");
+    z-index: -1;
+  }
+}
+
+@keyframes neon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

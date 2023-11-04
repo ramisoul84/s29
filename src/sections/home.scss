@@ -1,5 +1,10 @@
 @import "../index.scss";
 
+#home {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 // HOME-HELLO
 .home-hello {
   font-family: $font-lcd;

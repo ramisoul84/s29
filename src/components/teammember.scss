@@ -1,1 +1,42 @@
 @import "../index.scss";
+
+.team-member {
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  .member-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    img {
+      width: 100%;
+      border-radius: 1rem;
+      opacity: 0.4;
+    }
+    .skills {
+      font-family: $font-lcd;
+      min-height: 7rem;
+      font-weight: 200;
+      li {
+        list-style: none;
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+
+  h3 {
+    font-family: $font-lcd;
+    margin: 1rem 0;
+    font-weight: 200;
+  }
+  p {
+    font-family: $font-Montserrat;
+    min-height: 8rem;
+  }
+}
