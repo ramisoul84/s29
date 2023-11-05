@@ -33,6 +33,7 @@ const Contact = () => {
         />
         <label>how can we help you?</label>
         <textarea placeholder="Wrtite something .." />
+
         <button className="submit">
           SEND <VscSend className="arrow" />
         </button>
