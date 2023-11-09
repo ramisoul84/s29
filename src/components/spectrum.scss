@@ -1,0 +1,169 @@
+@import "../index.scss";
+
+.spectrum {
+  display: flex;
+  gap: 1rem;
+  font-family: $font-lcd;
+
+  p {
+    line-height: 1.2rem;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+  .spectrum-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    .spectrum-thumb {
+      position: absolute;
+      top: -3rem;
+      width: 100%;
+      appearance: none;
+      background-color: transparent;
+    }
+    .spectrum-thumb::-webkit-slider-thumb {
+      appearance: none;
+      width: 1.4rem;
+      height: 1.6rem;
+      clip-path: polygon(100% 25%, 100% 50%, 50% 100%, 0 50%, 0 25%);
+      background: $color-3;
+      cursor: pointer;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .spectrum-types {
+      position: absolute;
+      top: -1.2rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      width: 100%;
+      text-align: center;
+    }
+    .spectrum-track {
+      position: absolute;
+      top: 0rem;
+      height: 1.2rem;
+      width: 100%;
+      background: linear-gradient(90deg, $color-1 var(--x), $color-2);
+    }
+    .spectrum-sqs {
+      position: absolute;
+      top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      width: 100%;
+      .sq {
+        width: 1rem;
+        height: 1rem;
+        background-color: white;
+        text-align: center;
+      }
+    }
+    .spectrum-value {
+      position: absolute;
+      display: flex;
+      top: 13rem;
+    }
+  }
+}
+/*
+.spectrum-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  font-family: $font-lcd;
+  --angle: 45deg;
+  p {
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+    width: fit-content;
+    text-wrap: nowrap;
+  }
+  .spectrum-range {
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    appearance: none;
+    background-color: transparent;
+  }
+  .spectrum-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 1.4rem;
+    height: 1.6rem;
+    clip-path: polygon(100% 25%, 100% 50%, 50% 100%, 0 50%, 0 25%);
+    background: $color-3;
+    cursor: pointer;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .spectrum-types {
+    position: absolute;
+    font-family: $font-lcd;
+    font-size: 1.2rem;
+    color: gray;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    top: 2rem;
+    text-align: center;
+  }
+  .spectrum-box {
+    position: absolute;
+    top: 3.2rem;
+    height: 1.5rem;
+    width: 100%;
+    background: linear-gradient(var(--angle), $color-1, $color-2);
+  }
+  .spectrum-sqs {
+    position: absolute;
+    top: 5rem;
+    height: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    .sq {
+      width: 1rem;
+      height: 1rem;
+      background-color: white;
+    }
+  }
+  .spectrum-value {
+    position: absolute;
+    display: flex;
+    top: 13rem;
+  }
+}
+/*
+.spectrum-pointer {
+  appearance: none;
+  margin-top: 13rem;
+  width: 100%;
+  height: 0.4rem;
+  border: none;
+  background: transparent;
+}
+.spectrum-pointer::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 1.5rem;
+  width: 1.2rem;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic 
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+.spectrum-range {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 1.8rem;
+  border: none;
+  background: linear-gradient(90deg, red, blue);
+}
+*/

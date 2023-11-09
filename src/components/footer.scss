@@ -44,9 +44,17 @@ footer {
 .footer-logo {
   position: relative;
 }
-.footer-logo img {
+.footer-logo .logo {
   width: 4rem;
   position: absolute;
   left: 2rem;
+  bottom: 0rem;
+}
+.footer-logo .gif {
+  width: 4rem;
+  position: absolute;
+  background-color: blue;
+  height: 2.1rem;
+  left: 10rem;
   bottom: 0rem;
 }

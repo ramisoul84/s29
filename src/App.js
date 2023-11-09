@@ -18,8 +18,9 @@ const App = () => {
       window.removeEventListener("scroll", updateScrollpos);
     };
   }, []);
+
   const content = (
-    <div>
+    <div className="app">
       <Header />
       <Home />
       <Work scrollPos={currentScrollpos} />

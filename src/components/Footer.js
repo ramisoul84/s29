@@ -1,10 +1,12 @@
 import "./footer.scss";
 import logo from "../assets/img/logo.png";
+import gif from "../assets/img/Whale gif.gif";
 const Footer = () => {
   return (
     <footer>
       <div className="footer-logo">
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" className="logo" />
+        <img className="gif" alt="whale gif" src={gif} />
       </div>
       <div className="footer-links">
         <div className="footer-col col1">

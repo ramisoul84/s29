@@ -1,23 +1,21 @@
 import { useRef, useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
-import { MdWork } from "react-icons/md";
-import { RiTeamLine } from "react-icons/ri";
-import { MdContactMail } from "react-icons/md";
 import "./header.scss";
 const Header = () => {
   const scrollRef = useRef(0);
   const [firstLoad, setFrirstLoad] = useState(true);
   const [menu, setMenu] = useState(true);
-  const [tip, setTip] = useState("");
   useEffect(() => {
     function onScroll() {
       const list = document.querySelector(".menu-list");
+      const sections = document.querySelectorAll("section");
       scrollRef.current = window.scrollY;
       if (window.scrollY >= 180) setFrirstLoad(false);
       if (window.scrollY <= 180) {
         list.classList.remove("menu-list-down");
         setMenu(true);
+        sections.forEach((e) => (e.style.filter = "blur(0rem)"));
       }
     }
     window.addEventListener("scroll", onScroll);
@@ -25,10 +23,14 @@ const Header = () => {
   }, []);
   const toggleMenu = () => {
     const list = document.querySelector(".menu-list");
+    const sections = document.querySelectorAll("section");
     list.classList.contains("menu-list-down")
       ? list.classList.remove("menu-list-down")
       : list.classList.add("menu-list-down");
     setMenu(!menu);
+    menu
+      ? sections.forEach((e) => (e.style.filter = "blur(0.3rem)"))
+      : sections.forEach((e) => (e.style.filter = "blur(0rem)"));
   };
   return (
     <header ref={scrollRef}>
@@ -87,30 +89,14 @@ const Header = () => {
       <div className="menu-list">
         <ul>
           <li className="color1">
-            <a href="#work">
-              <MdWork
-                onMouseOver={() => setTip("WORK")}
-                onMouseLeave={() => setTip("")}
-              />
-            </a>
+            <a href="#work">work</a>
           </li>
           <li className="color2">
-            <a href="#about">
-              <RiTeamLine
-                onMouseOver={() => setTip("ABOUT")}
-                onMouseLeave={() => setTip("")}
-              />
-            </a>
+            <a href="#about">about</a>
           </li>
           <li className="color3">
-            <a href="#contact">
-              <MdContactMail
-                onMouseOver={() => setTip("CONTACT")}
-                onMouseLeave={() => setTip("")}
-              />
-            </a>
+            <a href="#contact">contact</a>
           </li>
-          <li className="tip">{tip}</li>
         </ul>
       </div>
       <div

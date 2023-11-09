@@ -171,30 +171,26 @@ header {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: calc(3 * $height);
-  left: calc(-3 * $height);
+  top: calc(4 * $height);
+  left: calc(-6 * $height);
   width: calc(3 * $height);
-  text-align: center;
+  text-align: left;
   transition: all 0.2s ease-in;
   li {
     list-style: none;
-    margin: 2rem 0;
-    font-size: 2.4rem;
-    color: $color-1;
-
+    font-size: 1.2rem;
+    padding: 0.2rem 0.8rem;
+    margin-bottom: 0.5rem;
+    color: $color-bg;
+    font-family: $font-lcd;
+    background-color: gray;
+    width: calc(6 * $height);
+    border-bottom: 0.5rem solid $color-1;
     &:hover {
-      color: $color-2;
-      transform: scale(1.4);
+      cursor: pointer;
+      border-bottom: 0.5rem solid $color-2;
+      border-right: 0.5rem solid $color-2;
     }
-  }
-  .tip {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    width: calc(3 * $height);
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    text-shadow: 2px 2px 5px $color-2;
   }
 }
 

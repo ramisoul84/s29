@@ -25,6 +25,7 @@
   --color-txt: #ffffff;
   --height: 1.2rem;
   --font-size: 1.2rem;
+  --x: 0%;
 }
 
 $color-1: var(--color-1);
@@ -53,7 +54,6 @@ $font-Montserrat: "Montserrat";
 }
 
 body {
-  background-image: url("./assets/img/background.png");
   background-color: $color-bg;
   color: $color-txt;
 }
